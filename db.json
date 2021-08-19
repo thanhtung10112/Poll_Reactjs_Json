@@ -1,0 +1,37 @@
+{
+  "poll": [
+    {
+      "id": "1",
+      "Name": "tung1",
+      "Option_1": "lần 1",
+      "opId1": "1",
+      "Option_2": "lan2",
+      "opId2": "1"
+    },
+    {
+      "id": "2",
+      "Name": "tung2",
+      "Option_1": "lần 1",
+      "opId1": "1",
+      "Option_2": "lan2",
+      "opId2": "1"
+    }
+  ],
+  "user": [
+    {
+      "Username": "Tung",
+      "Password": "123",
+      "id": 1
+    },
+    {
+      "Username": "tung22",
+      "Password": "123",
+      "id": 2
+    },
+    {
+      "Username": "tung22",
+      "Password": "123",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,489 @@
+:root {
+  --mains-color: #2980b9;
+  --form-bg: rgba(0, 0, 0, 0.8);
+  --border-color: #2980b9;
+  --form-color: #c6c6c6;
+  --form-input-bg: rgba(2, 2, 2, 0.22);
+
+  --border-radius: 10px;
+  --form-logo-size: 200px;
+  --form-max-width: 500px;
+}
+.mt-20 {
+  margin-top: 10px;
+}
+
+.bodys {
+  font-family: "Source Sans Pro", sans-serif;
+  position: relative;
+  display: grid;
+  place-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  user-select: none;
+}
+
+.form {
+  padding: 50px 60px;
+  background-color: var(--form-bg);
+  border-radius: var(--border-radius);
+  color: var(--form-color);
+  text-align: center;
+  width: 100%;
+  height: 450px;
+  max-width: var(--form-max-width);
+}
+
+.form-logo {
+  display: block;
+  margin-bottom: 50px;
+}
+
+.form-logo img {
+  width: var(--form-logo-size);
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  background-color: var(--form-input-bg);
+  border: 2px solid transparent;
+  height: 46px;
+  width: 100%;
+  position: relative;
+  color: var(--form-color);
+  border-radius: var(--border-radius);
+  padding: 0 20px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.form-input::placeholder {
+  color: var(--form-color);
+}
+
+.form-input:focus {
+  border: 2px solid var(--border-color);
+}
+
+.form-input-icon {
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.form-input-icon.err {
+  color: #c0392b;
+}
+
+.form-input-icon.success {
+  color: #27ae60;
+}
+
+.form-group.err .form-input-icon.err,
+.form-group.success .form-input-icon.success {
+  transform: scale(1);
+}
+
+.form-input-err-msg {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #c0392b;
+}
+
+.form-group-checkbox {
+  text-align: left;
+}
+
+.form-group-checkbox input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  cursor: pointer;
+}
+
+.form-group-checkbox label {
+  cursor: pointer;
+  padding-left: 30px;
+  position: relative;
+}
+
+.form-group-checkbox label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  background-color: var(--form-input-bg);
+}
+
+.form-group-checkbox label i {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  color: var(--mains-color);
+  transition: transform 0.3s ease-in-out;
+  transform: scale(0);
+}
+
+.form-group-checkbox input:checked + label i {
+  transform: scale(1);
+}
+
+.form-btn {
+  margin: 15px 0;
+  height: 46px;
+  width: 100%;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--mains-color);
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  color: var(--mains-color);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+.form-btn:hover {
+  background-color: var(--mains-color);
+  color: #fff;
+}
+
+.form-social {
+  margin: 15px 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-social-item {
+  display: grid;
+  place-items: center;
+  height: 44px;
+  width: calc(33% - 10px);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+}
+
+.form-social-item i {
+  font-size: 22px;
+  color: #fff;
+}
+
+.form-social-item.fb {
+  background-color: #3b5999;
+}
+
+.form-social-item.tw {
+  background-color: #1da1f2;
+}
+
+.form-social-item.gg {
+  background-color: #df4a32;
+}
+
+.form-txt {
+  margin-top: 15px;
+  font-size: 14px;
+  display: block;
+}
+
+.form-txt a {
+  text-decoration: none;
+  color: var(--mains-color);
+}
+
+.form-txt a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 500px) {
+  .form {
+    height: 100vh;
+    width: 100%;
+    max-width: unset;
+    padding: 50px 30px;
+    border-radius: 0;
+  }
+}
+
+/* .form-check .label{
+  margin-left: 60%;
+} */
+
+.form-check-label {
+  margin-right: 75%;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.navbar-light .navbar-brand {
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: aliceblue;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: aliceblue;
+}
+
+.form-input {
+  color: #6a5af9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  transition: 0.25s ease;
+  border-color: #6a5af9 !important;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #6a5af9;
+  box-shadow: 0 0 10px #719ece;
+}
+
+.form-field {
+  position: relative;
+}
+
+.form-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  user-select: none;
+  color: #999;
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+.form-input:not(:placeholder-shown) + .form-label,
+.form-input:focus + .form-label {
+  left: 11px;
+  top: 0;
+  padding: 0 10px;
+  display: inline-block;
+  background-color: white;
+  color: #6a5af9;
+}
+
+.Login {
+  width: 100%;
+}
+
+/* Main */
+
+.Poll {
+  color: #4a4a4a;
+}
+
+.columns {
+  display: flex;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-top: -0.75rem;
+}
+
+.columns-center {
+  justify-content: center;
+}
+
+.columns:last-child {
+  margin-bottom: -0.75rem;
+}
+
+.Poll-columns {
+  padding: 0.75rem;
+}
+
+.Poll-content {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  /* box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
+    0 0 0 1px rgb(10 10 10 / 2%); */
+  color: #4a4a4a;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #4a4a4a;
+  border-radius: 10px;
+
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 3px 3px 5px 6px #ccc; /* Firefox 3.5 - 3.6 */
+  box-shadow: 3px 3px 5px 6px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.Poll-header {
+  background-color: transparent;
+  align-items: stretch;
+  box-shadow: 0 0.125em 0.25em rgb(10 10 10 / 10%);
+  display: flex;
+}
+
+.Poll-title {
+  align-items: center;
+  color: #363636;
+  display: flex;
+  flex-grow: 1;
+  font-weight: 700;
+  padding: 0.8rem 1rem;
+  padding-top: 25px;
+}
+
+.Poll-icon {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+}
+
+.Poll-x {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-top: -10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.Poll-x:hover {
+  color: #4a4a4a;
+}
+
+.Poll-card {
+  padding: 1.2rem;
+}
+
+.vote {
+  width: 100%;
+  height: 3rem;
+  margin: 10px auto;
+  font-weight: 500;
+  background: #fafafa;
+  cursor: pointer;
+  position: relative;
+}
+
+.vote:hover {
+  opacity: 0.6;
+}
+
+.left {
+  background-color: rgba(241, 70, 104, 0.3);
+  border-left: 4px solid #f14668;
+}
+
+.bg-left {
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.text {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.left2 {
+  background-color: rgba(72, 199, 116, 0.3);
+  border-left: 4px solid #48c774;
+}
+
+.paginate {
+  position: fixed;
+  top: 90%;
+  left: 30%;
+}
+
+.paginate.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.paginate button {
+  background-color: #414141;
+  border: none;
+  margin: 20px 5px;
+  padding: 5px 12px;
+  color: #cac9c9;
+  border-radius: 5px;
+  opacity: 0.3;
+}
+.paginate button:focus {
+  opacity: 0.8;
+  color: #fff;
+  background-color: red;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.delMessage {
+  width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.delMessage.show {
+  opacity: 1;
+  visibility: visible;
+}
+.delMessage .box {
+  width: 100%;
+  padding: 40px 30px;
+}
+.delMessage .control {
+  text-align: right;
+  width: 100%;
+  padding: 15px;
+  background-color: #e2ebe9;
+}
+.title {
+  margin-left: 50%;
+}
