@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Route, useParams } from 'react-router-dom';
 import ReactDOM from 'react-dom';
+import Swal from 'sweetalert2';
 
 import AddPoll from "./AddPoll";
 import ListPoll from "./ListPoll";
@@ -9,6 +10,7 @@ import ListPoll from "./ListPoll";
 
 function IndexPoll() {
     const [poll, setPoll] = useState([]);
+    const [count, setcount] = useState(null);
     const [page, setPage] = useState(0);
     const [showPaginate, setShowPaginate] = useState(false);
 
@@ -33,7 +35,7 @@ function IndexPoll() {
                 setPoll(data);
                 console.log("Lấy Loại tin: ", data);
             });
-    }, []);
+    }, [count]);
 
     const thempoll = () => {
         ReactDOM.render(
@@ -68,6 +70,8 @@ function IndexPoll() {
             });
     }
 
+
+
     const hamThempoll = (poll) => {
         let url = `http://localhost:3500/poll/`;
         fetch(url, {
@@ -88,7 +92,12 @@ function IndexPoll() {
                     .then((numPage) => {
                         hamPhanTrang(numPage);
                         paginate(numPage);
-                    });
+                    })
+                    .then(d => Swal.fire('...', 'Thêm Thành Công!', 'success').then((result) => {
+                        if (result.isConfirmed) {
+                            window.location = "/IndexPoll"
+                        }
+                    }));
             })
     }
 
@@ -103,20 +112,64 @@ function IndexPoll() {
         })
     }
 
+    const handleClickPoll1 = async (id, CountPoll) => {
+        const index = poll.findIndex(x => x.id === id);
+        console.log(index);
+        if (index >= 0) {
+            poll[index].opId1 += 1;
+            const newpoll = [...poll]
+            console.log(newpoll[index]);
+            let url2 = `http://localhost:3500/poll/${id}`;
+            await fetch(url2, {
+                method: 'PUT', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newpoll[index]),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    setcount(data);
+                });
+        }
+    }
+
+    const handleClickPoll2 = async (id) => {
+        const index = poll.findIndex(x => x.id === id);
+        console.log(index);
+        if (index >= 0) {
+            poll[index].opId2 += 1;
+            const newpoll = [...poll]
+            console.log(newpoll[index]);
+            let url2 = `http://localhost:3500/poll/${id}`;
+            await fetch(url2, {
+                method: 'PUT', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newpoll[index]),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    setcount(data);
+                });
+        }
+    }
+
     return (
         <div className="container-fluid main">
             <div className="row align-items-center">
 
                 <div className="col-lg-9">
                     <main>
-                        {/* <Route path="/loai-xe" component={() =>  */}
+
                         <ListPoll
                             ListPoll={poll}
                             thempoll={thempoll}
                             DeletePoll={DeletePoll}
-                        />
-                        {/* </Route> */}
-                        {/* <Route path="/xe" ></Route> */}
+                            handleClickPoll1={handleClickPoll1}
+                            handleClickPoll2={handleClickPoll2} />
+
                         <div id="paginate" className={!showPaginate ? "paginate show" : "paginate"}></div>
 
                     </main>

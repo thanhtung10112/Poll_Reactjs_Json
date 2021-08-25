@@ -1,20 +1,28 @@
 {
   "poll": [
     {
-      "id": "1",
-      "Name": "tung1",
-      "Option_1": "lần 1",
-      "opId1": "1",
-      "Option_2": "lan2",
-      "opId2": "1"
+      "id": "2222",
+      "Name": "dádá",
+      "Option_1": "1",
+      "Option_2": "1",
+      "opId1": 37,
+      "opId2": 18
     },
     {
-      "id": "2",
-      "Name": "tung2",
-      "Option_1": "lần 1",
-      "opId1": "1",
-      "Option_2": "lan2",
-      "opId2": "1"
+      "id": "123",
+      "Name": "eqweq",
+      "Option_1": "1",
+      "Option_2": "213",
+      "opId1": 66,
+      "opId2": 86
+    },
+    {
+      "id": "1323",
+      "Name": "21312",
+      "Option_1": "12312",
+      "Option_2": "123123",
+      "opId1": 18,
+      "opId2": 8
     }
   ],
   "user": [
@@ -32,6 +40,21 @@
       "Username": "tung22",
       "Password": "123",
       "id": 3
+    },
+    {
+      "Username": "tungaa",
+      "Password": "12345",
+      "id": 4
+    },
+    {
+      "Username": "tungaa",
+      "Password": "12345",
+      "id": 5
+    },
+    {
+      "Username": "qưqe",
+      "Password": "qưeqwe",
+      "id": 6
     }
   ]
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 class AddPoll extends React.Component {
     constructor(props) {
@@ -16,6 +17,8 @@ class AddPoll extends React.Component {
             Name: this.Name.current.value,
             Option_1: this.Option_1.current.value,
             Option_2: this.Option_2.current.value,
+            opId1:0,
+            opId2:0
         }
         this.props.hamThempoll(poll);
         console.log(poll);

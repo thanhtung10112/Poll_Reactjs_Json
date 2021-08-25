@@ -41,7 +41,9 @@ class ListPoll extends React.Component {
     // Xác nhận sẽ xóa 
     chacChanXoa(id) {
         this.props.DeletePoll(id);
+        this.setState({ message: false })
     }
+
 
     render() {
         let warning = <>
@@ -59,7 +61,6 @@ class ListPoll extends React.Component {
                     </span>
                 </h4>
                 {this.props.ListPoll.map(poll => (
-
                     <div className="col-4 Poll-columns" >
                         <div className="Poll-content" >
                             <div className="Poll-header">
@@ -70,12 +71,12 @@ class ListPoll extends React.Component {
                             </div>
 
                             <div className="Poll-card">
-                                <div className="vote">
+                                <div className="vote" onClick={() => { this.props.handleClickPoll1(poll.id) }}>
                                     <div className='left bg-left'> </div>
-                                    <p className="text"> {poll.Option_1}:  {poll.opId1} </p>
+                                    <p className="text" > {poll.Option_1}:  {poll.opId1} </p>
                                 </div>
 
-                                <div className="vote">
+                                <div className="vote" onClick={() => { this.props.handleClickPoll2(poll.id) }}>
                                     <div className='left2 bg-left'> </div>
                                     <p className="text"> {poll.Option_2}: {poll.opId2} </p>
                                 </div>
